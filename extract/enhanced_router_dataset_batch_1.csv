@@ -1,0 +1,90 @@
+seq_id,instruction,output,code,entry_point,testcase,formatted_prompt,generated_code,generated_text,passes_tests,label,mean_entropy,max_entropy,min_entropy,std_entropy,mean_max_prob,min_max_prob,std_max_prob,mean_confidence,min_confidence,mean_top2_ratio,mean_margin,residual_top5,residual_top10,sequence_length,prob_variance,entropy_variance,entropy_range,perplexity,mean_sharpness,has_syntax_keywords,has_parentheses,has_brackets,has_braces,indentation_consistency,word_repetition_ratio,attention_entropy,attention_variance
+660113403,"Write a function to check if a given string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.","Here is the code to solve this problem: 
+```python
+def is_palindrome(s):
+    s = ''.join(c for c in s if c.isalnum()).lower()
+    return s == s[::-1]
+```","def is_palindrome(s):
+    s = ''.join(c for c in s if c.isalnum()).lower()
+    return s == s[::-1]",is_palindrome,"[assert is_palindrome(""No lemon, no melon"") == True, assert is_palindrome(""A man a plan a canal Panama"") == True, assert is_palindrome(""hello"") == False, assert is_palindrome(""racecar"") == True]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to check if a given string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.<|im_end|>
+<|im_start|>assistant
+","def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]","```python
+def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]
+```",True,0,0.0,-0.0,-0.0,0.0,1.0,1.0,0.0,1.0,1.0,100000000.0,1.0,0.0,0.0,36,0.0,0.0,0.0,1.0,-0.9999933838844299,1.0,1.0,1.0,0.0,1.0,0.25531914893617025,0.0,0.0
+14192481277,Write a function to find the missing number in a given list of numbers ranging from 0 to n.,"Here is the code to solve this problem: 
+```python
+def missing_number(nums):
+    n = len(nums)
+    total = n * (n + 1) // 2
+    sum_nums = sum(nums)
+    return total - sum_nums
+```","def missing_number(nums):
+    n = len(nums)
+    total = n * (n + 1) // 2
+    sum_nums = sum(nums)
+    return total - sum_nums",missing_number,"[assert missing_number([9,6,4,2,3,5,7,0,1])==8, assert missing_number([0,1])==2, assert missing_number([3,0,1])==2]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to find the missing number in a given list of numbers ranging from 0 to n.<|im_end|>
+<|im_start|>assistant
+","def find_missing_number(nums):
+    n = len(nums)
+    total_sum = n * (n + 1) // 2
+    return total_sum - sum(nums)","```python
+def find_missing_number(nums):
+    n = len(nums)
+    total_sum = n * (n + 1) // 2
+    return total_sum - sum(nums)
+```",False,1,0.02984362113766554,0.6556860208511353,-0.0,0.13214192621816173,0.9848991952291349,0.6359981894493103,0.06775850827284279,0.9974988702642967,0.9450483640550564,95121951.33333638,0.9697983904582698,0.0,0.0,41,0.004591215443360904,0.017461488664646096,0.6556860208511353,1.0302934052447004,-0.9999931861714619,1.0,1.0,0.0,0.0,1.0,0.25,0.0,0.0
+70726638201,Write a python function `max_subarray_sum` that finds the maximum sum of a contiguous subarray within a one-dimensional array of numbers which has at least one positive number.,"Here is the code to solve this problem: 
+```python
+def max_subarray_sum(nums):
+    if not nums:
+        return 0
+
+    current_sum = max_sum = nums[0]
+    for num in nums[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum
+```","def max_subarray_sum(nums):
+    if not nums:
+        return 0
+
+    current_sum = max_sum = nums[0]
+    for num in nums[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum",max_subarray_sum,"[assert max_subarray_sum([5,4,-1,7,8]) == 23, assert max_subarray_sum([1]) == 1, assert max_subarray_sum([-2,1,-3,4,-1,2,1,-5,4]) == 6]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function `max_subarray_sum` that finds the maximum sum of a contiguous subarray within a one-dimensional array of numbers which has at least one positive number.<|im_end|>
+<|im_start|>assistant
+","def max_subarray_sum(nums):
+    max_current = max_global = nums[0]
+    for num in nums[1:]:
+        max_current = max(num, max_current + num)
+        if max_current > max_global:
+            max_global = max_current
+    return max_global","```python
+def max_subarray_sum(nums):
+    max_current = max_global = nums[0]
+    for num in nums[1:]:
+        max_current = max(num, max_current + num)
+        if max_current > max_global:
+            max_global = max_current
+    return max_global
+```",True,0,0.014561042899177187,0.510796070098877,-0.0,0.08095047661308363,0.9944682083432637,0.7923726439476013,0.03112371253179296,0.998779670295036,0.9571912793721828,96825396.98277435,0.9889364157404218,0.0,0.0,63,0.0009686854817616863,0.006552979663885401,0.510796070098877,1.0146675713112459,-0.999993311980414,1.0,1.0,1.0,0.0,1.0,0.27083333333333337,0.0,0.0

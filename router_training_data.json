@@ -1,0 +1,572 @@
+[
+  {
+    "id": "assert is_cyclic(4",
+    "instruction": " [[0",
+    "function_name": " 2]",
+    "tests": " [1",
+    "code_7b": "def find_max_profit(jobs):\n    # Sort jobs based on their end times\n    jobs.sort(key=lambda x: x[1])\n    \n    n = len(jobs)\n    dp = [0] * (n + 1)\n    \n    for i in range(1, n + 1):\n        profit_without_current = dp[i - 1]\n        last_non_conflicting_job_index = i - 2\n        while last_non_conflicting_job_index >= 0 and jobs[last_non_conflicting_job_index][1] > jobs[i - 1][0]:\n            last_non_conflicting_job_index -= 1\n        \n        profit_with_current = dp[last_non_conflicting_job_index + 1] + jobs[i - 1][2]\n        \n        dp[i] = max(profit_without_current, profit_with_current)\n    \n    return dp[n]\n\n# Example usage:\njobs = [(1, 3, 5), (2, 4, 6), (3, 7, 8)]\nprint(find_max_profit(jobs))  # Output should be the maximum profit",
+    "code_32b": "It seems like your request is incomplete. Could you please specify the problem or complete the description so I can provide an appropriate function implementation?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert is_cyclic(4",
+    "instruction": " [[0",
+    "function_name": " 2]",
+    "tests": " [1",
+    "code_7b": "def solve_problem():\n    # Your solution code here\n    pass",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as there's no problem description provided within the brackets. Could you please clarify or provide more details about the problem you want to solve? Once I have that information, I can write a Python function for you.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert is_cyclic(3",
+    "instruction": " [[0",
+    "function_name": " 2]]) == False\"",
+    "tests": "476",
+    "code_7b": "def solve_problem():\n    # Your solution goes here\n    pass",
+    "code_32b": "def check_first_element(matrix):\n    \"\"\"\n    Check if the first element of the given 2D list (matrix) is 0.\n    \n    :param matrix: List of lists where each inner list represents a row of the matrix.\n    :return: True if the first element is 0, False otherwise.\n    \"\"\"\n    if not matrix or not matrix[0]:\n        return False\n    return matrix[0][0] == 0",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert find_quadruplets([-3",
+    "instruction": " -2",
+    "function_name": " 0",
+    "tests": " 1",
+    "code_7b": "def solve_problem():\n    # The problem is to return -2 as the result.\n    return -2",
+    "code_32b": "def return_negative_two():\n    return -2",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert find_quadruplets([1",
+    "instruction": " 0",
+    "function_name": " -2",
+    "tests": " 2]",
+    "code_7b": "def solve_problem():\n    # Your solution goes here\n    pass",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as there's no problem statement or description provided. Could you please clarify what the problem is that needs to be solved? Once you provide more details, I can implement the function for you.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert find_quadruplets([2",
+    "instruction": " 2",
+    "function_name": " 2]",
+    "tests": " 8) == [[2",
+    "code_7b": "def solve_problem():\n    # Your solution code here\n    pass",
+    "code_32b": "It seems like you've provided an incomplete problem statement with just the number \"2\". Could you please provide more details or clarify the problem so that I can implement the correct function in Python?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "paths = {1: [[0",
+    "instruction": " 1]",
+    "function_name": " 2: [[1",
+    "tests": " 0]",
+    "code_7b": "def find_common_elements(arr1, arr2):\n    # Convert both arrays to sets to remove duplicates and allow for efficient lookup\n    set1 = set(arr1)\n    set2 = set(arr2)\n\n    # Find the intersection of both sets to get common elements\n    common_elements = set1.intersection(set2)\n\n    # Return the result as a sorted list\n    return sorted(list(common_elements))",
+    "code_32b": "Certainly! However, it seems like there might be some information missing from your request. Could you please specify the problem or provide more details so I can implement the correct function?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "pairs = {(0",
+    "instruction": " 1): [1",
+    "function_name": " (0",
+    "tests": " -1): [1",
+    "code_7b": "def solve_problem():\n    # Your solution code here\n    pass",
+    "code_32b": "It seems like your request is incomplete. Could you please clarify or provide more details about the problem you want to solve? For instance, what should the function do with the input `[1`? Is there a specific task or output expected?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 2,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert has_valid_path([[2",
+    "instruction": "4",
+    "function_name": "5",
+    "tests": "2]]) == True",
+    "code_7b": "def solve_problem():\n    # Your solution here\n    pass",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you mentioned \"4\" but did not specify what problem or task you want to solve with the function. Could you please provide more details about the problem you need help with?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert has_valid_path([[1",
+    "instruction": "2",
+    "function_name": "2",
+    "tests": "1]]) == False",
+    "code_7b": "def find_max_min(numbers):\n    if not numbers:\n        return None, None  # Return None for both max and min if the list is empty\n    max_num = min_num = numbers[0]\n    for num in numbers[1:]:\n        if num > max_num:\n            max_num = num\n        elif num < min_num:\n            min_num = num\n    return max_num, min_num",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you've mentioned \"problem 2\" but haven't provided the details of the problem. Could you please specify the problem or provide more context so I can implement the correct function for you?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert has_valid_path([[1",
+    "instruction": "1",
+    "function_name": "1",
+    "tests": "1",
+    "code_7b": "def find_min_max(numbers):\n    \"\"\"\n    This function takes a list of integers and returns a tuple containing the minimum and maximum values.\n    \n    :param numbers: List[int]\n    :return: Tuple[int, int]\n    \"\"\"\n    if not numbers:\n        return None\n    \n    min_val = max_val = numbers[0]\n    for num in numbers[1:]:\n        if num < min_val:\n            min_val = num\n        elif num > max_val:\n            max_val = num\n            \n    return (min_val, max_val)",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you haven't specified the problem or the task that needs to be solved with the Python function. Could you please provide more details about what the function should do?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert has_valid_path([[2]",
+    "instruction": "[2]",
+    "function_name": "[2]",
+    "tests": "[2]",
+    "code_7b": "def solve_problem():\n    # Your solution code here\n    pass",
+    "code_32b": "Certainly! However, it seems like you forgot to specify the exact problem or requirements for the function `[2]`. Could you please provide more details or clarify the problem you are trying to solve? This will help me in implementing the correct function for you.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "print(maximum_heights([6",
+    "instruction": " 5",
+    "function_name": " 2",
+    "tests": " 7]))",
+    "code_7b": "def solve_problem():\n    # Your solution goes here",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you haven't specified the problem or the requirements for the function. Could you please provide more details or clarify what the function should do? For example, are you looking for a function that solves a specific mathematical problem, processes data, or something else? Once you provide more information, I can give you the appropriate function implementation.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "print(maximum_heights([3",
+    "instruction": " 2",
+    "function_name": " 2",
+    "tests": " 3]))\"",
+    "code_7b": "def find_parentheses_pairs(input_string):\n    stack = []\n    result = {}\n    \n    for i, char in enumerate(input_string):\n        if char == '(':\n            stack.append(i)\n        elif char == ')':\n            if stack:\n                start_index = stack.pop()\n                if start_index not in result:\n                    result[start_index] = i\n                else:\n                    result[start_index] = max(result[start_index], i)\n    \n    return result\n\n# Example usage:\ninput_str = \"((()))(())()\"\nprint(find_parentheses_pairs(input_str))  # Output: {0: 5, 2: 6}",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you've mentioned \"2\" without providing any specific problem or details about what the function should do. Could you please provide more information or clarify the problem statement?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "root1 = create_tree([10",
+    "instruction": "5",
+    "function_name": "8",
+    "tests": "None",
+    "code_7b": "def solve_problem():\n    # Your solution goes here\n    pass",
+    "code_32b": "Certainly! However, it seems like you haven't provided the full problem description. Could you please specify what the problem is? For example, are you looking for a function that performs a specific task with the number 5, or does something else entirely? Once you provide more details, I can give you the appropriate function implementation.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "root2 = create_tree([5",
+    "instruction": "4",
+    "function_name": "1",
+    "tests": "None",
+    "code_7b": "def find_max_profit(stock_prices):\n    min_price = float('inf')\n    max_profit = 0\n    \n    for price in stock_prices:\n        if price < min_price:\n            min_price = price\n        elif price - min_price > max_profit:\n            max_profit = price - min_price\n    \n    return max_profit",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you've mentioned \"Problem 4\" but haven't provided the details of the problem. Could you please provide more information or specify the problem statement? This will help me in writing the correct Python function for you.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "root3 = create_tree([1",
+    "instruction": "1",
+    "function_name": "1",
+    "tests": "1",
+    "code_7b": "def find_max_profit(prices):\n    \"\"\"\n    :type prices: List[int]\n    :rtype: int\n    \"\"\"\n    if not prices:\n        return 0\n    \n    min_price = float('inf')\n    max_profit = 0\n    \n    for price in prices:\n        min_price = min(min_price, price)\n        max_profit = max(max_profit, price - min_price)\n    \n    return max_profit",
+    "code_32b": "Certainly! However, it seems like the problem description is incomplete or missing. Could you please provide more details about what the function is supposed to do? For example, are you looking for a function that solves a specific mathematical problem, processes data, or performs some other task? Once you provide more information, I can help you with the implementation.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert linked_list_to_list(output) == [1",
+    "instruction": "2",
+    "function_name": " f\"\"Test case 1 failed. Expected [1",
+    "tests": "2",
+    "code_7b": "def find_two_sum(nums, target):\n    \"\"\"\n    :type nums: List[int]\n    :type target: int\n    :rtype: List[int]\n    \"\"\"\n    num_to_index = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in num_to_index:\n            return [num_to_index[complement], i]\n        num_to_index[num] = i\n    return []",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you mentioned \"Problem 2\" but did not provide the details of the problem. Could you please provide more information about what the problem entails? This will help me in writing the correct Python function for you.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert linked_list_to_list(output) == [2",
+    "instruction": "3",
+    "function_name": " f\"\"Test case 3 failed. Expected [2",
+    "tests": "3",
+    "code_7b": "def solve_problem(input_string):\n    # Implement your solution here\n    pass",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you haven't specified the problem or task you want the function to solve. Could you please provide more details or clarify the problem statement? Once you do that, I can help you with the function implementation.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "for dx",
+    "instruction": " dy in [(1",
+    "function_name": " 0)",
+    "tests": " (0",
+    "code_7b": "def solve_problem():\n    # Your solution code here\n    pass",
+    "code_32b": "It seems like your request is incomplete or contains a typo. Could you please clarify the problem statement? Are you asking for a function that solves a differential equation, or something else? Providing more details will help me give you an accurate implementation.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 3,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "37180736650",
+    "instruction": "count_inversions",
+    "function_name": " left",
+    "tests": " right):",
+    "code_7b": "def merge_sort_and_count(arr):\n    if len(arr) <= 1:\n        return arr, 0\n    \n    mid = len(arr) // 2\n    left, left_inv = merge_sort_and_count(arr[:mid])\n    right, right_inv = merge_sort_and_count(arr[mid:])\n    \n    merged, split_inv = merge_and_count(left, right)\n    \n    total_inv = left_inv + right_inv + split_inv\n    return merged, total_inv\n\ndef merge_and_count(left, right):\n    i = j = inv_count = 0\n    merged = []\n    \n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            merged.append(left[i])\n            i += 1\n        else:\n            merged.append(right[j])\n            j += 1\n            inv_count += (len(left) - i)\n    \n    merged += left[i:]\n    merged += right[j:]\n    \n    return merged, inv_count\n\ndef count_inversions(arr):\n    _, total_inv = merge_sort_and_count(arr)\n    return total_inv\n\n# Example usage:\narray = [1, 3, 5, 2, 4, 6]\nprint(count_inversions(array))  # Output: 3",
+    "code_32b": "def count_inversions(arr):\n    def merge_and_count(arr, temp_arr, left, mid, right):\n        i = left    # Starting index for left subarray\n        j = mid + 1 # Starting index for right subarray\n        k = left    # Starting index to be sorted\n        inv_count = 0\n\n        while i <= mid and j <= right:\n            if arr[i] <= arr[j]:\n                temp_arr[k] = arr[i]\n                i += 1\n            else:\n                temp_arr[k] = arr[j]\n                inv_count += (mid - i + 1)\n                j += 1\n            k += 1\n\n        while i <= mid:\n            temp_arr[k] = arr[i]\n            i += 1\n            k += 1\n\n        while j <= right:\n            temp_arr[k] = arr[j]\n            j += 1\n            k += 1\n\n        for i in range(left, right + 1):\n            arr[i] = temp_arr[i]\n            \n        return inv_count\n\n    def merge_sort_and_count(arr, temp_arr, left, right):\n        inv_count = 0\n        if left < right:\n            mid = (left + right) // 2\n\n            inv_count += merge_sort_and_count(arr, temp_arr, left, mid)\n            inv_count += merge_sort_and_count(arr, temp_arr, mid + 1, right)\n            inv_count += merge_and_count(arr, temp_arr, left, mid, right)\n\n        return inv_count\n\n    n = len(arr)\n    temp_arr = [0] * n\n    return merge_sort_and_count(arr, temp_arr, 0, n - 1)",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": true,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "print(count_inversions([1",
+    "instruction": " 3",
+    "function_name": " 4",
+    "tests": " 6]))",
+    "code_7b": "def solution(N):\n    # Your implementation here\n    pass",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you've provided only a number \"3\" without specifying the problem details. Could you please provide more information or describe the problem you want to solve with the Python function?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "28109870787",
+    "instruction": "count_inversions",
+    "function_name": " left",
+    "tests": " right):",
+    "code_7b": "def merge_and_count(arr, temp_arr, left, mid, right):\n    i = left    # Starting index for left subarray\n    j = mid + 1 # Starting index for right subarray\n    k = left    # Starting index to be sorted\n    inv_count = 0\n\n    # Conditions are checked to ensure that i doesn't exceed mid and j doesn't exceed right\n    while i <= mid and j <= right:\n        if arr[i] <= arr[j]:\n            temp_arr[k] = arr[i]\n            i += 1\n        else:\n            # There are mid - i inversions, because all the remaining elements in the left subarray\n            # (arr[i], arr[i+1], ..., arr[mid]) are greater than arr[j]\n            temp_arr[k] = arr[j]\n            inv_count += (mid-i + 1)\n            j += 1\n        k += 1\n\n    # Copy the remaining elements of left subarray, if any\n    while i <= mid:\n        temp_arr[k] = arr[i]\n        i += 1\n        k += 1\n\n    # Copy the remaining elements of right subarray, if any\n    while j <= right:\n        temp_arr[k] = arr[j]\n        j += 1\n        k += 1\n\n    # Copy the sorted subarray into Original array\n    for i in range(left, right + 1):\n        arr[i] = temp_arr[i]\n\n    return inv_count\n\ndef merge_sort_and_count(arr, temp_arr, left, right):\n    inv_count = 0\n    if left < right:\n        mid = (left + right)//2\n\n        inv_count += merge_sort_and_count(arr, temp_arr, left, mid)\n        inv_count += merge_sort_and_count(arr, temp_arr, mid + 1, right)\n\n        inv_count += merge_and_count(arr, temp_arr, left, mid, right)\n\n    return inv_count\n\ndef count_inversions(arr):\n    n = len(arr)\n    temp_arr = [0]*n\n    return merge_sort_and_count(arr, temp_arr, 0, n-1)\n\n# Example usage:\narr = [8, 4, 2, 1]\nprint(\"Number of inversions are:\", count_inversions(arr))",
+    "code_32b": "def count_inversions(arr):\n    def merge_and_count(arr, temp_arr, left, mid, right):\n        i = left    # Starting index for left subarray\n        j = mid + 1 # Starting index for right subarray\n        k = left    # Starting index to be sorted\n        inv_count = 0\n\n        while i <= mid and j <= right:\n            if arr[i] <= arr[j]:\n                temp_arr[k] = arr[i]\n                i += 1\n            else:\n                temp_arr[k] = arr[j]\n                inv_count += (mid - i + 1)\n                j += 1\n            k += 1\n\n        while i <= mid:\n            temp_arr[k] = arr[i]\n            i += 1\n            k += 1\n\n        while j <= right:\n            temp_arr[k] = arr[j]\n            j += 1\n            k += 1\n\n        for i in range(left, right + 1):\n            arr[i] = temp_arr[i]\n\n        return inv_count\n\n    def merge_sort_and_count(arr, temp_arr, left, right):\n        inv_count = 0\n        if left < right:\n            mid = (left + right) // 2\n\n            inv_count += merge_sort_and_count(arr, temp_arr, left, mid)\n            inv_count += merge_sort_and_count(arr, temp_arr, mid + 1, right)\n            inv_count += merge_and_count(arr, temp_arr, left, mid, right)\n\n        return inv_count\n\n    n = len(arr)\n    temp_arr = [0] * n\n    return merge_sort_and_count(arr, temp_arr, 0, n - 1)",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": true,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "assert count_inversions([1",
+    "instruction": " 3",
+    "function_name": " 4",
+    "tests": " 6]) == 3",
+    "code_7b": "def find_min_max(arr):\n    if not arr:\n        return None, None\n    \n    min_val = max_val = arr[0]\n    \n    for num in arr[1:]:\n        if num < min_val:\n            min_val = num\n        elif num > max_val:\n            max_val = num\n            \n    return min_val, max_val",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as you mentioned \"3\" but didn't specify what problem or task you want the function to solve. Could you please provide more details or clarify the problem statement?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "ones = [\"\"\"\"",
+    "instruction": " \"\"One\"\"",
+    "function_name": " \"\"Four\"\"",
+    "tests": " \"\"Five\"\"",
+    "code_7b": "def solve_one():\n    # Your solution code here\n    pass",
+    "code_32b": "Certainly! However, it seems like your request is incomplete as the problem description is just \"One\". Could you please provide more details or clarify the problem you need a solution for?",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "teens = [\"\"Ten\"\"",
+    "instruction": " \"\"Eleven\"\"",
+    "function_name": " \"\"Fourteen\"\"",
+    "tests": " \"\"Fifteen\"\"",
+    "code_7b": "def eleven_solution():\n    # Your solution here\n    pass",
+    "code_32b": "def eleven(n):\n    return n % 11 == 0",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "tens = [\"\"\"\"",
+    "instruction": " \"\"\"\"",
+    "function_name": " \"\"Forty\"\"",
+    "tests": " \"\"Fifty\"\"",
+    "code_7b": "def find_max_profit(prices):\n    if not prices:\n        return 0\n\n    min_price = float('inf')\n    max_profit = 0\n\n    for price in prices:\n        min_price = min(min_price, price)\n        profit = price - min_price\n        max_profit = max(max_profit, profit)\n\n    return max_profit",
+    "code_32b": "Certainly! However, it seems like you haven't specified the problem or the requirements for the function. Could you please provide more details about what the function should do? For example, is it supposed to perform a specific calculation, manipulate data, or something else? Once I have that information, I can provide the appropriate function implementation.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "arr1",
+    "instruction": " arr2",
+    "function_name": " arr1",
+    "tests": " n",
+    "code_7b": "def find_min_swaps(arr):\n    n = len(arr)\n    min_swaps = 0\n    for i in range(n):\n        for j in range(i + 1, n):\n            if arr[i] > arr[j]:\n                min_swaps += 1\n    return min_swaps\n\n# Example usage:\narr2 = [3, 1, 5, 4, 2]\nprint(find_min_swaps(arr2))  # Output: 6",
+    "code_32b": "def sort_array(arr2):\n    return sorted(arr2)",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "head2 = make_list([1",
+    "instruction": " 2",
+    "function_name": " 3",
+    "tests": " 2",
+    "code_7b": "def solution():\n    # Your code here\n    pass",
+    "code_32b": "It seems like your request is incomplete. Could you please specify what problem or task the function should solve? This will help me in providing the correct implementation.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  },
+  {
+    "id": "direction = [(0",
+    "instruction": " 1)",
+    "function_name": " (1",
+    "tests": " 0)",
+    "code_7b": "def find_max_subarray_sum(arr):\n    max_current = max_global = arr[0]\n    for num in arr[1:]:\n        max_current = max(num, max_current + num)\n        if max_current > max_global:\n            max_global = max_current\n    return max_global",
+    "code_32b": "Certainly! However, it seems like you've only provided part of the problem statement. Could you please provide the full details or specify the problem you need help with? This will allow me to implement the correct function for you.",
+    "pass_7b": false,
+    "pass_32b": false,
+    "preference": "32b",
+    "features": {
+      "length": 1,
+      "has_algorithm": false,
+      "has_data_structure": false,
+      "has_math": false,
+      "has_string": false,
+      "complexity_indicators": 0
+    }
+  }
+]
