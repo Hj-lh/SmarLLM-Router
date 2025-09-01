@@ -1,0 +1,1207 @@
+seq_id,instruction,output,code,entry_point,testcase,formatted_prompt,generated_code,generated_text,passes_tests,label,mean_entropy,max_entropy,min_entropy,std_entropy,mean_max_prob,min_max_prob,std_max_prob,mean_confidence,min_confidence,mean_top2_ratio,mean_margin,residual_top5,residual_top10,sequence_length,prob_variance,entropy_variance,entropy_range,perplexity,mean_sharpness,has_syntax_keywords,has_parentheses,has_brackets,has_braces,indentation_consistency,word_repetition_ratio,attention_entropy,attention_variance
+660113403,"Write a function to check if a given string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.","Here is the code to solve this problem: 
+```python
+def is_palindrome(s):
+    s = ''.join(c for c in s if c.isalnum()).lower()
+    return s == s[::-1]
+```","def is_palindrome(s):
+    s = ''.join(c for c in s if c.isalnum()).lower()
+    return s == s[::-1]",is_palindrome,"[assert is_palindrome(""No lemon, no melon"") == True, assert is_palindrome(""A man a plan a canal Panama"") == True, assert is_palindrome(""hello"") == False, assert is_palindrome(""racecar"") == True]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to check if a given string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.<|im_end|>
+<|im_start|>assistant
+","def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]","```python
+def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]
+```",True,0,0.0,-0.0,-0.0,0.0,1.0,1.0,0.0,1.0,1.0,100000000.0,1.0,0.0,0.0,36,0.0,0.0,0.0,1.0,-0.9999933838844299,1.0,1.0,1.0,0.0,1.0,0.25531914893617025,0.0,0.0
+14192481277,Write a function to find the missing number in a given list of numbers ranging from 0 to n.,"Here is the code to solve this problem: 
+```python
+def missing_number(nums):
+    n = len(nums)
+    total = n * (n + 1) // 2
+    sum_nums = sum(nums)
+    return total - sum_nums
+```","def missing_number(nums):
+    n = len(nums)
+    total = n * (n + 1) // 2
+    sum_nums = sum(nums)
+    return total - sum_nums",missing_number,"[assert missing_number([9,6,4,2,3,5,7,0,1])==8, assert missing_number([0,1])==2, assert missing_number([3,0,1])==2]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to find the missing number in a given list of numbers ranging from 0 to n.<|im_end|>
+<|im_start|>assistant
+","def find_missing_number(nums):
+    n = len(nums)
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum","```python
+def find_missing_number(nums):
+    n = len(nums)
+    expected_sum = n * (n + 1) // 2
+    actual_sum = sum(nums)
+    return expected_sum - actual_sum
+```",False,1,0.011831300954023996,0.5679024457931519,-0.0,0.08111131281418389,0.9946847669780254,0.744868814945221,0.03643940171930346,0.9990084440996063,0.9524053167811039,97916666.72749066,0.9893695339560509,0.0,0.0,48,0.001327829997660776,0.006579045066440393,0.5679024457931519,1.0119015676371463,-0.9999933143456777,1.0,1.0,0.0,0.0,1.0,0.2650602409638554,0.0,0.0
+70726638201,Write a python function `max_subarray_sum` that finds the maximum sum of a contiguous subarray within a one-dimensional array of numbers which has at least one positive number.,"Here is the code to solve this problem: 
+```python
+def max_subarray_sum(nums):
+    if not nums:
+        return 0
+
+    current_sum = max_sum = nums[0]
+    for num in nums[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum
+```","def max_subarray_sum(nums):
+    if not nums:
+        return 0
+
+    current_sum = max_sum = nums[0]
+    for num in nums[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum",max_subarray_sum,"[assert max_subarray_sum([5,4,-1,7,8]) == 23, assert max_subarray_sum([1]) == 1, assert max_subarray_sum([-2,1,-3,4,-1,2,1,-5,4]) == 6]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function `max_subarray_sum` that finds the maximum sum of a contiguous subarray within a one-dimensional array of numbers which has at least one positive number.<|im_end|>
+<|im_start|>assistant
+","def max_subarray_sum(nums):
+    max_current = max_global = nums[0]
+    for num in nums[1:]:
+        max_current = max(num, max_current + num)
+        if max_current > max_global:
+            max_global = max_current
+    return max_global","```python
+def max_subarray_sum(nums):
+    max_current = max_global = nums[0]
+    for num in nums[1:]:
+        max_current = max(num, max_current + num)
+        if max_current > max_global:
+            max_global = max_current
+    return max_global
+```",True,0,0.014561042899177187,0.510796070098877,-0.0,0.08095047661308363,0.9944682083432637,0.7923726439476013,0.03112371253179296,0.998779670295036,0.9571912793721828,96825396.98277435,0.9889364157404218,0.0,0.0,63,0.0009686854817616863,0.006552979663885401,0.510796070098877,1.0146675713112459,-0.999993311980414,1.0,1.0,1.0,0.0,1.0,0.27083333333333337,0.0,0.0
+893855581,"Given an array nums of n integers and an integer k, find the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element.","Here is the code to solve this problem: 
+```python
+def kth_largest(nums, k):
+    nums.sort()
+    return nums[-k]
+```","def kth_largest(nums, k):
+    nums.sort()
+    return nums[-k]",kth_largest,"[assert kth_largest([1,2], 1) == 2, assert kth_largest([3,2,3,1,2,4,5,5,6], 4) == 4, assert kth_largest([3,2,1,5,6,4], 2) == 5]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Given an array nums of n integers and an integer k, find the kth largest element in the array. Note that it is the kth largest element in the sorted order, not the kth distinct element.<|im_end|>
+<|im_start|>assistant
+","def findKthLargest(nums, k):
+    nums.sort()
+    return nums[-k]","```python
+def findKthLargest(nums, k):
+    nums.sort()
+    return nums[-k]
+```",False,1,0.04179859161376953,0.667354166507721,-0.0,0.1475497624894126,0.9795055794715881,0.613071858882904,0.07872639571004726,0.9964969498870974,0.9440704818494224,92000000.34227535,0.9590111601352692,0.0,0.0,25,0.006197845381494949,0.021770932410682065,0.667354166507721,1.042684452208053,-0.9999931168556213,1.0,1.0,1.0,0.0,1.0,0.24705882352941178,0.0,0.0
+20383247274,Write a function to generate the nth row of Pascal's triangle.,"Here is the code to solve this problem: 
+```python
+def pascal_row(n):
+    row = [1]
+    for i in range(1, n+1):
+        row.append(row[i-1] * (n-i+1) // i)
+    return row
+```","def pascal_row(n):
+    row = [1]
+    for i in range(1, n+1):
+        row.append(row[i-1] * (n-i+1) // i)
+    return row",pascal_row,"[assert pascal_row(5) == [1, 5, 10, 10, 5, 1], assert pascal_row(4) == [1, 4, 6, 4, 1], assert pascal_row(3) == [1, 3, 3, 1]]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to generate the nth row of Pascal's triangle.<|im_end|>
+<|im_start|>assistant
+","def pascals_triangle_row(n):
+    row = [1]
+    for i in range(1, n):
+        row.append(row[i-1] * (n-i) // i)
+    return row","```python
+def pascals_triangle_row(n):
+    row = [1]
+    for i in range(1, n):
+        row.append(row[i-1] * (n-i) // i)
+    return row
+```",False,1,0.05854123587511024,0.9608573317527771,-0.0,0.20096209298677578,0.9692072442599705,0.5201849937438965,0.10619146075832579,0.9950937848615405,0.9194726124846023,91836734.86648388,0.9421735217376631,0.0,0.0,49,0.011276626337987048,0.040385762817625515,0.9608573317527771,1.0602887067258449,-0.9999929313756981,1.0,1.0,1.0,0.0,1.0,0.23943661971830987,0.0,0.0
+19434228727,"Write a function that checks if a given tree is a binary search tree.
+
+A binary search tree has the property that all nodes in the left subtree of a node have values less than the node's value and all nodes in the right subtree have values greater than the node's value.","Here is the code to solve this problem: 
+```python
+def is_binary_search_tree(root, min_val=float('-inf'), max_val=float('inf')):
+    if root is None:
+        return True
+
+    if not (root.val > min_val and root.val < max_val):
+        return False
+
+    return (is_binary_search_tree(root.left, min_val, root.val) and
+            is_binary_search_tree(root.right, root.val, max_val))
+```","def is_binary_search_tree(root, min_val=float('-inf'), max_val=float('inf')):
+    if root is None:
+        return True
+
+    if not (root.val > min_val and root.val < max_val):
+        return False
+
+    return (is_binary_search_tree(root.left, min_val, root.val) and
+            is_binary_search_tree(root.right, root.val, max_val))",is_binary_search_tree,"[    assert is_binary_search_tree(root3) == True,     root3.right.right = TreeNode(17),     root3.right.left = TreeNode(12),     root3.left.right = TreeNode(7),     root3.left.left = TreeNode(3),     root3.right = TreeNode(15),     root3.left = TreeNode(5),     root3 = TreeNode(10),     # Test case 3: A more complex binary search tree, ,     assert is_binary_search_tree(root2) == False,     root2.left.right = TreeNode(4),     root2.left.left = TreeNode(1),     root2.right = TreeNode(2),     root2.left = TreeNode(3),     root2 = TreeNode(5),     # Test case 2: A binary tree that is not a binary search tree, ,     assert is_binary_search_tree(root1) == True,     root1.left.right = TreeNode(4),     root1.left.left = TreeNode(2),     root1.right = TreeNode(7),     root1.left = TreeNode(3),     root1 = TreeNode(5),     # Test case 1: A simple binary search tree, ]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function that checks if a given tree is a binary search tree.
+
+A binary search tree has the property that all nodes in the left subtree of a node have values less than the node's value and all nodes in the right subtree have values greater than the node's value.<|im_end|>
+<|im_start|>assistant
+","def is_bst(node, min_val=float('-inf'), max_val=float('inf')):
+    if not node:
+        return True
+    if not (min_val < node.value < max_val):
+        return False
+    return is_bst(node.left, min_val, node.value) and is_bst(node.right, node.value, max_val)","```python
+def is_bst(node, min_val=float('-inf'), max_val=float('inf')):
+    if not node:
+        return True
+    if not (min_val < node.value < max_val):
+        return False
+    return is_bst(node.left, min_val, node.value) and is_bst(node.right, node.value, max_val)
+```",False,1,0.055830929624406916,1.0605032444000244,-0.0,0.18705638685460105,0.974657911219095,0.5424145460128784,0.08816005012583521,0.9953209298023381,0.9111215027444782,90789474.05056548,0.9524114606411833,0.0,0.0,76,0.007772194438189777,0.03499009186309816,1.0605032444000244,1.0574188904137485,-0.9999929925328807,1.0,1.0,0.0,0.0,1.0,0.3305785123966942,0.0,0.0
+28755799726,"Write a python function to find the missing number in a given list of integers that contains n distinct numbers taken from 0, 1, 2, ..., n. The function should have a time complexity of O(n) and space complexity of O(1).","Here is the code to solve this problem: 
+```python
+def missing_number(nums):
+    n = len(nums)
+    total = n * (n + 1) // 2
+    sum_nums = sum(nums)
+    return total - sum_nums
+```","def missing_number(nums):
+    n = len(nums)
+    total = n * (n + 1) // 2
+    sum_nums = sum(nums)
+    return total - sum_nums",missing_number,"[assert missing_number([9,6,4,2,3,5,7,0,1]) == 8, assert missing_number([0, 1]) == 2, assert missing_number([3, 0, 1]) == 2]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the missing number in a given list of integers that contains n distinct numbers taken from 0, 1, 2, ..., n. The function should have a time complexity of O(n) and space complexity of O(1).<|im_end|>
+<|im_start|>assistant
+","def missingNumber(nums):
+    n = len(nums)
+    total_sum = n * (n + 1) // 2
+    array_sum = sum(nums)
+    return total_sum - array_sum","```python
+def missingNumber(nums):
+    n = len(nums)
+    total_sum = n * (n + 1) // 2
+    array_sum = sum(nums)
+    return total_sum - array_sum
+```",False,1,0.03246211181295679,0.6827316284179688,-0.0,0.1299131903875656,0.9841877184015639,0.5720393657684326,0.06971835386901118,0.9972794201895078,0.9427817298221148,93617021.5795108,0.9683754368031279,1.2681839313912899e-09,1.2681839313912899e-09,47,0.0048606488662046666,0.016877437036675866,0.6827316284179688,1.0329947541040656,-0.9999931771704491,1.0,1.0,0.0,0.0,1.0,0.2571428571428571,0.0,0.0
+70726596281,"Write a python function to check if a given string is a palindrome or not. A palindrome is a word, phrase, number, or other sequence of characters that reads the same backward as forward.","Here is the code to solve this problem: 
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+```","def is_palindrome(s):
+    return s == s[::-1]",is_palindrome,"[assert is_palindrome(""12345"") == False, assert is_palindrome(""123321"") == True, assert is_palindrome(""12321"") == True, assert is_palindrome(""level"") == True, assert is_palindrome(""python"") == False, assert is_palindrome(""racecar"") == True]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to check if a given string is a palindrome or not. A palindrome is a word, phrase, number, or other sequence of characters that reads the same backward as forward.<|im_end|>
+<|im_start|>assistant
+","def is_palindrome(s):
+    s = s.lower()
+    s = ''.join(char for char in s if char.isalnum())
+    return s == s[::-1]","```python
+def is_palindrome(s):
+    s = s.lower()
+    s = ''.join(char for char in s if char.isalnum())
+    return s == s[::-1]
+```",True,0,0.047743077576160434,0.671159029006958,-0.0,0.1678663568485733,0.9744987174868583,0.604466438293457,0.0903922901985681,0.9959987552968557,0.9437516045022933,92500000.1494749,0.948997437208891,1.4901161193847657e-09,1.4901161193847657e-09,40,0.008170766127342152,0.02817911376161255,0.671159029006958,1.0489011344811399,-0.9999930500984192,1.0,1.0,1.0,0.0,1.0,0.28421052631578947,0.0,0.0
+32279616255,Write a function to check if a given list of integers is sorted in ascending order and all elements are unique.,"Here is the code to solve this problem: 
+```python
+def check_sorted_unique(test_list):
+    return test_list == sorted(set(test_list))
+```","def check_sorted_unique(test_list):
+    return test_list == sorted(set(test_list))",check_sorted_unique,"[assert check_sorted_unique([1, 3, 5, 7, 9]) == True, assert check_sorted_unique([5, 4, 3, 2, 1]) == False, assert check_sorted_unique([1, 2, 2, 4, 5]) == False, assert check_sorted_unique([1, 2, 3, 4, 5]) == True]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to check if a given list of integers is sorted in ascending order and all elements are unique.<|im_end|>
+<|im_start|>assistant
+","def is_sorted_and_unique(lst):
+    return all(lst[i] < lst[i+1] for i in range(len(lst)-1))","```python
+def is_sorted_and_unique(lst):
+    return all(lst[i] < lst[i+1] for i in range(len(lst)-1))
+```",False,1,0.044313878724069306,0.5813238024711609,-0.0,0.14368255774636696,0.9816281614881573,0.7319359183311462,0.06169243594273684,0.996286149081244,0.9512805017284666,90909091.34525402,0.9632563238794153,0.0,0.0,33,0.003805956652548688,0.02064467740053807,0.5813238024711609,1.0453104040978114,-0.9999931436596494,1.0,1.0,1.0,0.0,1.0,0.22972972972972971,0.0,0.0
+12120976763,Write a python function to find the length of the longest substring without repeating characters in a given string.,"Here is the code to solve this problem: 
+```python
+def length_of_longest_substring(s):
+    if not s:
+        return 0
+    char_map = {}
+    left = 0
+    max_length = 0
+    for right in range(len(s)):
+        if s[right] in char_map:
+            left = max(left, char_map[s[right]] + 1)
+        char_map[s[right]] = right
+        max_length = max(max_length, right - left + 1)
+    return max_length
+```","def length_of_longest_substring(s):
+    if not s:
+        return 0
+    char_map = {}
+    left = 0
+    max_length = 0
+    for right in range(len(s)):
+        if s[right] in char_map:
+            left = max(left, char_map[s[right]] + 1)
+        char_map[s[right]] = right
+        max_length = max(max_length, right - left + 1)
+    return max_length",length_of_longest_substring,"[assert length_of_longest_substring("" "") == 1, assert length_of_longest_substring("""") == 0, assert length_of_longest_substring(""pwwkew"") == 3, assert length_of_longest_substring(""bbbbb"") == 1, assert length_of_longest_substring(""abcabcbb"") == 3]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the length of the longest substring without repeating characters in a given string.<|im_end|>
+<|im_start|>assistant
+","def length_of_longest_substring(s: str) -> int:
+    char_index_map = {}
+    start = 0
+    max_length = 0
+    
+    for end in range(len(s)):
+        if s[end] in char_index_map and char_index_map[s[end]] >= start:
+            start = char_index_map[s[end]] + 1
+        char_index_map[s[end]] = end
+        max_length = max(max_length, end - start + 1)
+    
+    return max_length","```python
+def length_of_longest_substring(s: str) -> int:
+    char_index_map = {}
+    start = 0
+    max_length = 0
+    
+    for end in range(len(s)):
+        if s[end] in char_index_map and char_index_map[s[end]] >= start:
+            start = char_index_map[s[end]] + 1
+        char_index_map[s[end]] = end
+        max_length = max(max_length, end - start + 1)
+    
+    return max_length
+```",True,0,0.012340483315494082,0.5652978420257568,-0.0,0.07471147293163051,0.9952536755745564,0.7472854256629944,0.029803585409854498,0.9989657706204298,0.9526236030239933,97247706.57105078,0.9905073514225287,5.468316034439507e-10,5.468316034439507e-10,109,0.0008882537032824919,0.005581804187613759,0.5652978420257568,1.0124169412653767,-0.9999933220924587,1.0,1.0,1.0,1.0,1.0,0.339622641509434,0.0,0.0
+18874307847,Create a function that takes a string as an input and returns a list of unique characters in the string in the order they appear.,"Here is the code to solve this problem: 
+```python
+def unique_char_in_order(input_str):
+    unique_chars = []
+    for char in input_str:
+        if char not in unique_chars:
+            unique_chars.append(char)
+    return unique_chars
+```","def unique_char_in_order(input_str):
+    unique_chars = []
+    for char in input_str:
+        if char not in unique_chars:
+            unique_chars.append(char)
+    return unique_chars",unique_char_in_order,"[assert unique_char_in_order(""banana"") == ['b', 'a', 'n'], assert unique_char_in_order(""apple"") == ['a', 'p', 'l', 'e'], assert unique_char_in_order(""google"") == ['g', 'o', 'l', 'e']]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Create a function that takes a string as an input and returns a list of unique characters in the string in the order they appear.<|im_end|>
+<|im_start|>assistant
+","def unique_characters(s):
+    seen = set()
+    result = []
+    for char in s:
+        if char not in seen:
+            seen.add(char)
+            result.append(char)
+    return result","```python
+def unique_characters(s):
+    seen = set()
+    result = []
+    for char in s:
+        if char not in seen:
+            seen.add(char)
+            result.append(char)
+    return result
+```",False,1,0.0,-0.0,-0.0,0.0,1.0,1.0,0.0,1.0,1.0,100000000.0,1.0,0.0,0.0,46,0.0,0.0,0.0,1.0,-0.9999933838844299,1.0,1.0,1.0,0.0,1.0,0.2584269662921348,0.0,0.0
+44289869161,Write a function to find the longest substring without repeating characters in a given string.,"Here is the code to solve this problem: 
+```python
+def longest_substring_without_repeating_characters(s):
+    char_set = set()
+    left = 0
+    max_length = 0
+    max_substring = """"
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left += 1
+        char_set.add(s[right])
+        if (right - left + 1) > max_length:
+            max_length = right - left + 1
+            max_substring = s[left:right+1]
+    return max_substring
+```","def longest_substring_without_repeating_characters(s):
+    char_set = set()
+    left = 0
+    max_length = 0
+    max_substring = """"
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left += 1
+        char_set.add(s[right])
+        if (right - left + 1) > max_length:
+            max_length = right - left + 1
+            max_substring = s[left:right+1]
+    return max_substring",longest_substring_without_repeating_characters,"[assert longest_substring_without_repeating_characters(""pwwkew"")==""wke"", assert longest_substring_without_repeating_characters(""bbbbb"")==""b"", assert longest_substring_without_repeating_characters(""abcabcbb"")==""abc""]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to find the longest substring without repeating characters in a given string.<|im_end|>
+<|im_start|>assistant
+","def longest_unique_substring(s):
+    max_length = 0
+    start = 0
+    char_index_map = {}
+
+    for end in range(len(s)):
+        if s[end] in char_index_map:
+            start = max(start, char_index_map[s[end]] + 1)
+        char_index_map[s[end]] = end
+        max_length = max(max_length, end - start + 1)
+
+    return max_length","```python
+def longest_unique_substring(s):
+    max_length = 0
+    start = 0
+    char_index_map = {}
+
+    for end in range(len(s)):
+        if s[end] in char_index_map:
+            start = max(start, char_index_map[s[end]] + 1)
+        char_index_map[s[end]] = end
+        max_length = max(max_length, end - start + 1)
+
+    return max_length
+```",False,1,0.03482451250678614,1.0191905498504639,-0.0,0.15514268224912414,0.9817738972212139,0.5,0.0841375674219556,0.9970814324655741,0.9145838308689137,94736842.2526933,0.9655727097862645,0.0,0.0,95,0.007079130251684126,0.0240692518554527,1.0191905498504639,1.0354379864384704,-0.9999931191143236,1.0,1.0,1.0,1.0,1.0,0.35416666666666663,0.0,0.0
+72740153081,Write a function to find the largest continuous sum in an array.,"Here is the code to solve this problem: 
+```python
+def largest_continuous_sum(arr):
+    if len(arr) == 0:
+        return 0
+
+    max_sum = current_sum = arr[0]
+
+    for num in arr[1:]:
+        current_sum = max(current_sum + num, num)
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum
+```","def largest_continuous_sum(arr):
+    if len(arr) == 0:
+        return 0
+
+    max_sum = current_sum = arr[0]
+
+    for num in arr[1:]:
+        current_sum = max(current_sum + num, num)
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum",largest_continuous_sum,"[assert largest_continuous_sum([-1, 1]) == 1, assert largest_continuous_sum([1, 2, -1, 3, 4, -1]) == 9, assert largest_continuous_sum([1, 2, -1, 3, 4, 10, 10, -10, -1]) == 29]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to find the largest continuous sum in an array.<|im_end|>
+<|im_start|>assistant
+","def max_continuous_sum(arr):
+    if not arr:
+        return 0
+    
+    max_sum = current_sum = arr[0]
+    
+    for num in arr[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    
+    return max_sum","```python
+def max_continuous_sum(arr):
+    if not arr:
+        return 0
+    
+    max_sum = current_sum = arr[0]
+    
+    for num in arr[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    
+    return max_sum
+```",False,1,0.03624823774610247,0.6524703502655029,-0.0,0.13480494631851445,0.983737999200821,0.6416372656822205,0.06441091555417015,0.9969621131137066,0.9453178624944332,92857143.17667383,0.9674759992531368,8.514949253627232e-10,8.514949253627232e-10,70,0.004148766042526439,0.01817237355193756,0.6524703502655029,1.0369132155447758,-0.9999931710106986,1.0,1.0,1.0,0.0,1.0,0.28915662650602414,0.0,0.0
+25369038617,"Write a function to check if a word is a palindrome.
+
+A palindrome is a word that reads the same backward as forward, e.g., ""madam"" or ""racecar"".","Here is the code to solve this problem: 
+```python
+def is_palindrome(word):
+    return word == word[::-1]
+```","def is_palindrome(word):
+    return word == word[::-1]",is_palindrome,"[assert is_palindrome(""world"") == False, assert is_palindrome(""level"") == True, assert is_palindrome(""hello"") == False, assert is_palindrome(""madam"") == True, assert is_palindrome(""racecar"") == True]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to check if a word is a palindrome.
+
+A palindrome is a word that reads the same backward as forward, e.g., ""madam"" or ""racecar"".<|im_end|>
+<|im_start|>assistant
+","def is_palindrome(word):
+    return word == word[::-1]","```python
+def is_palindrome(word):
+    return word == word[::-1]
+```",True,0,0.0,-0.0,-0.0,0.0,1.0,1.0,0.0,1.0,1.0,100000000.0,1.0,0.0,0.0,19,0.0,0.0,0.0,1.0,-0.9999933838844299,1.0,1.0,1.0,0.0,1.0,0.2894736842105263,0.0,0.0
+1281915040,Write a python function to find the total number of ways to reach the top of a staircase if you can climb either 1 or 2 steps at a time.,"Here is the code to solve this problem: 
+```python
+def climb_Stairs(n):
+    a, b = 1, 2
+    for _ in range(3, n + 1):
+        a, b = b, a + b
+    return b if n > 1 else n
+```","def climb_Stairs(n):
+    a, b = 1, 2
+    for _ in range(3, n + 1):
+        a, b = b, a + b
+    return b if n > 1 else n",climb_Stairs,"[assert climb_Stairs(4) == 5, assert climb_Stairs(5) == 8, assert climb_Stairs(3) == 3]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the total number of ways to reach the top of a staircase if you can climb either 1 or 2 steps at a time.<|im_end|>
+<|im_start|>assistant
+","def climbStairs(n):
+    if n <= 1:
+        return 1
+    a, b = 1, 2
+    for i in range(2, n):
+        a, b = b, a + b
+    return b","```python
+def climbStairs(n):
+    if n <= 1:
+        return 1
+    a, b = 1, 2
+    for i in range(2, n):
+        a, b = b, a + b
+    return b
+```",False,1,0.07546780523607287,0.6925870180130005,-0.0,0.19596254189327358,0.9617642921916509,0.5167345404624939,0.10640742679139502,0.9936752054687497,0.9419557708052995,86440678.45552488,0.9235285858986741,1.0102482165320445e-09,1.0102482165320445e-09,59,0.01132254047636609,0.038401317825273,0.6925870180130005,1.07838850869571,-0.9999928838115627,1.0,1.0,0.0,0.0,1.0,0.31000000000000005,0.0,0.0
+21969432676,Write a function to generate all possible permutations of a given list of numbers.,"Here is the code to solve this problem: 
+```python
+def generate_permutations(nums):
+    if len(nums) == 1:
+        return [nums]
+    permutations = []
+    for i in range(len(nums)):
+        current_num = nums[i]
+        remaining_nums = nums[:i] + nums[i+1:]
+        sub_permutations = generate_permutations(remaining_nums)
+        for sub_permutation in sub_permutations:
+            permutations.append([current_num] + sub_permutation)
+    return permutations
+```","def generate_permutations(nums):
+    if len(nums) == 1:
+        return [nums]
+    permutations = []
+    for i in range(len(nums)):
+        current_num = nums[i]
+        remaining_nums = nums[:i] + nums[i+1:]
+        sub_permutations = generate_permutations(remaining_nums)
+        for sub_permutation in sub_permutations:
+            permutations.append([current_num] + sub_permutation)
+    return permutations",generate_permutations,"[assert generate_permutations([1]) == [[1]], assert generate_permutations([1, 2]) == [[1, 2], [2, 1]], assert generate_permutations([1, 2, 3]) == [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to generate all possible permutations of a given list of numbers.<|im_end|>
+<|im_start|>assistant
+","def permute(nums):
+    def backtrack(start):
+        if start == len(nums):
+            result.append(nums[:])
+        for i in range(start, len(nums)):
+            nums[start], nums[i] = nums[i], nums[start]
+            backtrack(start + 1)
+            nums[start], nums[i] = nums[i], nums[start]
+    
+    result = []
+    backtrack(0)
+    return result","```python
+def permute(nums):
+    def backtrack(start):
+        if start == len(nums):
+            result.append(nums[:])
+        for i in range(start, len(nums)):
+            nums[start], nums[i] = nums[i], nums[start]
+            backtrack(start + 1)
+            nums[start], nums[i] = nums[i], nums[start]
+    
+    result = []
+    backtrack(0)
+    return result
+```",False,1,0.027955591678619385,0.636696457862854,-0.0,0.11599428939953069,0.9882648552971325,0.6664035320281982,0.051277485291924614,0.9976571019547512,0.946639838509142,94252873.8346895,0.9765297095665987,0.0,0.0,87,0.0026293804978635453,0.013454675173302077,0.636696457862854,1.0283500161093988,-0.9999932304195974,1.0,1.0,1.0,0.0,1.0,0.2666666666666667,0.0,0.0
+24485454232,Write a python function to find the Fibonacci sequence up to n numbers.,"Here is the code to solve this problem: 
+```python
+def fibonacci(n):
+  fib_sequence = [0, 1]
+  while len(fib_sequence) < n:
+    fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+  return fib_sequence
+```","def fibonacci(n):
+  fib_sequence = [0, 1]
+  while len(fib_sequence) < n:
+    fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+  return fib_sequence",fibonacci,"[assert fibonacci(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34], assert fibonacci(8) == [0, 1, 1, 2, 3, 5, 8, 13], assert fibonacci(5) == [0, 1, 1, 2, 3]]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the Fibonacci sequence up to n numbers.<|im_end|>
+<|im_start|>assistant
+","def fibonacci_sequence(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    
+    sequence = [0, 1]
+    for i in range(2, n):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence","```python
+def fibonacci_sequence(n):
+    if n <= 0:
+        return []
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    
+    sequence = [0, 1]
+    for i in range(2, n):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence
+```",False,1,0.03686132273042059,0.6384832859039307,-0.0,0.1457872493973049,0.9816323454121509,0.6637992262840271,0.07307774979589952,0.9969107317790582,0.9464900882919848,93975903.75469951,0.9632646915424301,0.0,0.0,83,0.005340357515232093,0.021253922086831974,0.6384832859039307,1.0375491263810415,-0.9999931440295944,1.0,1.0,1.0,0.0,1.0,0.3076923076923077,0.0,0.0
+73965182520,"Write a function that checks if a given string is a palindrome, considering only alphanumeric characters and ignoring cases.","Here is the code to solve this problem: 
+```python
+def is_palindrome(s: str) -> bool:
+    s = ''.join([c.lower() for c in s if c.isalnum()])
+    return s == s[::-1]
+```","def is_palindrome(s: str) -> bool:
+    s = ''.join([c.lower() for c in s if c.isalnum()])
+    return s == s[::-1]",is_palindrome,"[assert is_palindrome("" "") == True, assert is_palindrome(""race a car"") == False, assert is_palindrome(""A man, a plan, a canal: Panama"") == True]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function that checks if a given string is a palindrome, considering only alphanumeric characters and ignoring cases.<|im_end|>
+<|im_start|>assistant
+","def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]","```python
+def is_palindrome(s):
+    s = ''.join(c.lower() for c in s if c.isalnum())
+    return s == s[::-1]
+```",True,0,0.03692597978644901,0.6827313899993896,-0.0,0.15230923625214654,0.9784276435772578,0.5720402598381042,0.08943491464914341,0.9969053130101793,0.9427817498034634,94444444.53346984,0.9568552846709887,0.0,0.0,36,0.007998603958299566,0.023198103447712188,0.6827313899993896,1.03761621342184,-0.9999931007623672,1.0,1.0,1.0,0.0,1.0,0.24675324675324672,0.0,0.0
+15590275150,Create a python function to find the second largest number in a list of integers. Assume that the list always has at least two distinct numbers.,"Here is the code to solve this problem: 
+```python
+def find_second_largest(nums):
+    max_num = second_max_num = float('-inf')
+    for num in nums:
+        if num > max_num:
+            second_max_num = max_num
+            max_num = num
+        elif num > second_max_num and num != max_num:
+            second_max_num = num
+    return second_max_num
+```","def find_second_largest(nums):
+    max_num = second_max_num = float('-inf')
+    for num in nums:
+        if num > max_num:
+            second_max_num = max_num
+            max_num = num
+        elif num > second_max_num and num != max_num:
+            second_max_num = num
+    return second_max_num",find_second_largest,"[assert find_second_largest([100, 200, 300]) == 200, assert find_second_largest([-1, -2, -3, -4, -5]) == -2, assert find_second_largest([10, 20, 20, 30, 40]) == 30, assert find_second_largest([5, 1, 2, 3, 4]) == 4, assert find_second_largest([1, 2, 3, 4, 5]) == 4]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Create a python function to find the second largest number in a list of integers. Assume that the list always has at least two distinct numbers.<|im_end|>
+<|im_start|>assistant
+","def second_largest(nums):
+    first, second = float('-inf'), float('-inf')
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second","```python
+def second_largest(nums):
+    first, second = float('-inf'), float('-inf')
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+```",False,1,0.032103235904987044,0.677453875541687,-0.0,0.13074504637451304,0.9840339550605187,0.5883487462997437,0.07101264912379103,0.997309496807915,0.9432240469456191,93846154.11368297,0.9680679119550265,9.169945350060097e-10,9.169945350060097e-10,65,0.00504279633557866,0.017094267151473566,0.677453875541687,1.0326241036864892,-0.999993174809676,1.0,1.0,0.0,0.0,1.0,0.33009708737864074,0.0,0.0
+74992079799,Write a function to find the median of two sorted arrays.,"Here is the code to solve this problem: 
+```python
+def find_median(nums1, nums2):
+    nums = sorted(nums1 + nums2)
+    if len(nums) % 2 == 0:
+        return (nums[len(nums)//2] + nums[len(nums)//2 - 1]) / 2
+    else:
+        return nums[len(nums)//2]
+```","def find_median(nums1, nums2):
+    nums = sorted(nums1 + nums2)
+    if len(nums) % 2 == 0:
+        return (nums[len(nums)//2] + nums[len(nums)//2 - 1]) / 2
+    else:
+        return nums[len(nums)//2]",find_median,"[assert find_median([1,2], [3,4])==2.5, assert find_median([1,3], [2])==2.0, assert find_median([1,3], [2,7])==2.5]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to find the median of two sorted arrays.<|im_end|>
+<|im_start|>assistant
+","def findMedianSortedArrays(nums1, nums2):
+    merged = sorted(nums1 + nums2)
+    n = len(merged)
+    if n % 2 == 1:
+        return merged[n // 2]
+    else:
+        return (merged[n // 2 - 1] + merged[n // 2]) / 2","```python
+def findMedianSortedArrays(nums1, nums2):
+    merged = sorted(nums1 + nums2)
+    n = len(merged)
+    if n % 2 == 1:
+        return merged[n // 2]
+    else:
+        return (merged[n // 2 - 1] + merged[n // 2]) / 2
+```",False,1,0.02006132107276421,0.8832119703292847,-0.0,0.12414221936593815,0.9898806446558469,0.5957049131393433,0.06201341288279651,0.998318703804705,0.9259799033190459,97402597.44851504,0.9808708630598985,-1.5481725915685878e-09,-1.5481725915685878e-09,77,0.0038456633773721926,0.01541129062910071,0.8832119703292847,1.0202639017855193,-0.9999932368080338,1.0,1.0,1.0,0.0,1.0,0.2727272727272727,0.0,0.0
+6257817307,"Write a function that takes a string and a target character as input, and returns the number of times the target character appears in the string. The function should be case insensitive.","Here is the code to solve this problem: 
+```python
+def count_char(string, target_char):
+    string = string.lower()
+    target_char = target_char.lower()
+    return string.count(target_char)
+```","def count_char(string, target_char):
+    string = string.lower()
+    target_char = target_char.lower()
+    return string.count(target_char)",count_char,"[assert count_char(""HELLO WORLD"", ""w"") == 1, assert count_char(""MISSISSIPPI"", ""i"") == 4, assert count_char(""Mississippi"", ""s"") == 4, assert count_char(""Hello World"", ""o"") == 2]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function that takes a string and a target character as input, and returns the number of times the target character appears in the string. The function should be case insensitive.<|im_end|>
+<|im_start|>assistant
+","def count_character_occurrences(s, target):
+    return s.lower().count(target.lower())","```python
+def count_character_occurrences(s, target):
+    return s.lower().count(target.lower())
+```",False,1,0.06594378274420033,0.6928980946540833,-0.0,0.1774351686941958,0.9660895078078561,0.5111590027809143,0.10557824181171914,0.9944733933209559,0.9419297001407007,86956522.3168245,0.9321790143199589,2.591506294582201e-09,2.591506294582201e-09,23,0.01114676514405384,0.03148323908953772,0.6928980946540833,1.0681666660793518,-0.9999929381453473,1.0,1.0,0.0,0.0,1.0,0.275,0.0,0.0
+15526957597,Write a function that checks if a given string is an anagram of a palindrome.,"Here is the code to solve this problem: 
+```python
+from collections import Counter
+
+def is_anagram_of_palindrome(s: str) -> bool:
+    char_counts = Counter(s)
+    odd_counts = sum(1 for count in char_counts.values() if count % 2 != 0)
+    return odd_counts <= 1
+```","from collections import Counter
+
+def is_anagram_of_palindrome(s: str) -> bool:
+    char_counts = Counter(s)
+    odd_counts = sum(1 for count in char_counts.values() if count % 2 != 0)
+    return odd_counts <= 1",is_anagram_of_palindrome,"[assert is_anagram_of_palindrome(""carerac"") == True, assert is_anagram_of_palindrome(""aabbc"") == True, assert is_anagram_of_palindrome(""aabbcc"") == True, assert is_anagram_of_palindrome(""abc"") == False, assert is_anagram_of_palindrome(""aabb"") == True]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function that checks if a given string is an anagram of a palindrome.<|im_end|>
+<|im_start|>assistant
+","def is_anagram_of_palindrome(s):
+    from collections import Counter
+    count = Counter(s.replace("" "", """").lower())
+    odd_count = sum(1 for v in count.values() if v % 2 != 0)
+    return odd_count <= 1","```python
+def is_anagram_of_palindrome(s):
+    from collections import Counter
+    count = Counter(s.replace("" "", """").lower())
+    odd_count = sum(1 for v in count.values() if v % 2 != 0)
+    return odd_count <= 1
+```",True,0,0.05365986364786742,1.103342890739441,-0.0,0.18499162688621296,0.9791906368537028,0.5774953961372375,0.07463420725346116,0.9955028821749086,0.9075312040728702,90163935.06667829,0.9622994754158083,0.0,0.0,61,0.005570264892352596,0.03422190201800783,1.103342890739441,1.0551256545218008,-0.9999930115996815,1.0,1.0,0.0,0.0,1.0,0.22093023255813948,0.0,0.0
+20004586671,Write a python function to find the maximum product of three numbers in a list. The function should return the maximum product.,"Here is the code to solve this problem: 
+```python
+def max_product(nums):
+    nums.sort()
+    return max(nums[0]*nums[1]*nums[-1], nums[-1]*nums[-2]*nums[-3])
+```","def max_product(nums):
+    nums.sort()
+    return max(nums[0]*nums[1]*nums[-1], nums[-1]*nums[-2]*nums[-3])",max_product,"[assert max_product([0, -1, 3, 100, -70, -5]) == 35000, assert max_product([-1, -2, -3, 4]) == 24, assert max_product([1, 2, 3]) == 6]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the maximum product of three numbers in a list. The function should return the maximum product.<|im_end|>
+<|im_start|>assistant
+","def maximum_product(nums):
+    nums.sort()
+    return max(nums[0] * nums[1] * nums[-1], nums[-1] * nums[-2] * nums[-3])","```python
+def maximum_product(nums):
+    nums.sort()
+    return max(nums[0] * nums[1] * nums[-1], nums[-1] * nums[-2] * nums[-3])
+```",False,1,0.04423383739259508,0.5493885278701782,-0.0,0.14264045476107545,0.982092461321089,0.7614622712135315,0.05845536565391187,0.9962928571731782,0.9539569284447126,91111111.4836331,0.964184922642178,0.0,0.0,45,0.0034170297737325397,0.020346299334446413,0.5493885278701782,1.0452267394096248,-0.9999931507640415,1.0,1.0,1.0,0.0,1.0,0.2911392405063291,0.0,0.0
+44911643638,Write a python function to find the minimum number of swaps required to sort a list.,"Here is the code to solve this problem: 
+```python
+def min_swaps_to_sort(arr):
+    n = len(arr)
+    arr_pos = [*enumerate(arr)]
+    arr_pos.sort(key=lambda it: it[1])
+    vis = {k: False for k in range(n)}
+
+    ans = 0
+    for i in range(n):
+        if vis[i] or arr_pos[i][0] == i:
+            continue
+
+        cycle_size = 0
+        j = i
+        while not vis[j]:
+            vis[j] = True
+            j = arr_pos[j][0]
+            cycle_size += 1
+        if cycle_size > 0:
+            ans += (cycle_size - 1)
+    return ans
+```","def min_swaps_to_sort(arr):
+    n = len(arr)
+    arr_pos = [*enumerate(arr)]
+    arr_pos.sort(key=lambda it: it[1])
+    vis = {k: False for k in range(n)}
+
+    ans = 0
+    for i in range(n):
+        if vis[i] or arr_pos[i][0] == i:
+            continue
+
+        cycle_size = 0
+        j = i
+        while not vis[j]:
+            vis[j] = True
+            j = arr_pos[j][0]
+            cycle_size += 1
+        if cycle_size > 0:
+            ans += (cycle_size - 1)
+    return ans",min_swaps_to_sort,"[assert min_swaps_to_sort([1, 3, 5, 2, 4, 6, 7]) == 3, assert min_swaps_to_sort([1, 5, 4, 3, 2]) == 2, assert min_swaps_to_sort([4, 3, 2, 1]) == 2]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the minimum number of swaps required to sort a list.<|im_end|>
+<|im_start|>assistant
+","def min_swaps_to_sort(arr):
+    n = len(arr)
+    arr_pos = [(value, index) for index, value in enumerate(arr)]
+    arr_pos.sort()
+    visited = [False] * n
+    swaps = 0
+
+    for i in range(n):
+        if visited[i] or arr_pos[i][1] == i:
+            continue
+        cycle_size = 0
+        j = i
+        while not visited[j]:
+            visited[j] = True
+            j = arr_pos[j][1]
+            cycle_size += 1
+        if cycle_size > 0:
+            swaps += (cycle_size - 1)
+    return swaps","```python
+def min_swaps_to_sort(arr):
+    n = len(arr)
+    arr_pos = [(value, index) for index, value in enumerate(arr)]
+    arr_pos.sort()
+    visited = [False] * n
+    swaps = 0
+
+    for i in range(n):
+        if visited[i] or arr_pos[i][1] == i:
+            continue
+        cycle_size = 0
+        j = i
+        while not visited[j]:
+            visited[j] = True
+            j = arr_pos[j][1]
+            cycle_size += 1
+        if cycle_size > 0:
+            swaps += (cycle_size - 1)
+    return swaps
+```",True,0,0.027858542485369578,0.6885923147201538,-0.0,0.118192582970679,0.9874216508534219,0.5476861596107483,0.057996023042692496,0.9976652354390207,0.9422905583012593,94444444.69383894,0.9748433012929227,-4.13921144273546e-10,-4.13921144273546e-10,144,0.003363538688768519,0.01396948666928084,0.6885923147201538,1.0282502204125812,-0.9999932195577357,1.0,1.0,1.0,0.0,1.0,0.3114754098360656,0.0,0.0
+2175400675,"Write a function to find the maximum difference between two elements in a list, where the larger element comes after the smaller one.","Here is the code to solve this problem: 
+```python
+def max_difference(lst):
+    if len(lst) < 2:
+        return 0
+    min_val = lst[0]
+    max_diff = 0
+    for i in range(1, len(lst)):
+        if lst[i] - min_val > max_diff:
+            max_diff = lst[i] - min_val
+        if lst[i] < min_val:
+            min_val = lst[i]
+    return max_diff
+```","def max_difference(lst):
+    if len(lst) < 2:
+        return 0
+    min_val = lst[0]
+    max_diff = 0
+    for i in range(1, len(lst)):
+        if lst[i] - min_val > max_diff:
+            max_diff = lst[i] - min_val
+        if lst[i] < min_val:
+            min_val = lst[i]
+    return max_diff",max_difference,"[assert max_difference([1, 2, 3, 4, 5]) == 4, assert max_difference([7, 9, 5, 6, 3, 2]) == 2, assert max_difference([2, 3, 10, 2, 4, 8, 1]) == 8]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function to find the maximum difference between two elements in a list, where the larger element comes after the smaller one.<|im_end|>
+<|im_start|>assistant
+","def max_difference(nums):
+    if not nums or len(nums) < 2:
+        return 0
+    
+    min_price = nums[0]
+    max_diff = 0
+    
+    for price in nums:
+        if price < min_price:
+            min_price = price
+        elif price - min_price > max_diff:
+            max_diff = price - min_price
+    
+    return max_diff","```python
+def max_difference(nums):
+    if not nums or len(nums) < 2:
+        return 0
+    
+    min_price = nums[0]
+    max_diff = 0
+    
+    for price in nums:
+        if price < min_price:
+            min_price = price
+        elif price - min_price > max_diff:
+            max_diff = price - min_price
+    
+    return max_diff
+```",True,0,0.03670465244966395,0.9362385869026184,-0.0,0.1537245563961019,0.9830531947753008,0.5872457027435303,0.07222440473234114,0.99692386197851,0.9215358565700432,94117647.25949235,0.9676548449432149,0.0,0.0,85,0.005216364638941022,0.023631239239178314,0.9362385869026184,1.0373865860010685,-0.9999931412584642,1.0,1.0,1.0,0.0,1.0,0.3457943925233645,0.0,0.0
+40713914324,Write a python function to find the longest substring without repeating characters in a given string.,"Here is the code to solve this problem: 
+```python
+def longest_substring_without_repeating_characters(s):
+    char_map = {}
+    left = 0
+    result = """"
+    for right in range(len(s)):
+        if s[right] in char_map:
+            left = max(left, char_map[s[right]] + 1)
+        char_map[s[right]] = right
+        if right - left + 1 > len(result):
+            result = s[left:right+1]
+    return result
+```","def longest_substring_without_repeating_characters(s):
+    char_map = {}
+    left = 0
+    result = """"
+    for right in range(len(s)):
+        if s[right] in char_map:
+            left = max(left, char_map[s[right]] + 1)
+        char_map[s[right]] = right
+        if right - left + 1 > len(result):
+            result = s[left:right+1]
+    return result",longest_substring_without_repeating_characters,"[assert longest_substring_without_repeating_characters(""pwwkew"") == ""wke"", assert longest_substring_without_repeating_characters(""bbbbb"") == ""b"", assert longest_substring_without_repeating_characters(""abcabcbb"") == ""abc""]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the longest substring without repeating characters in a given string.<|im_end|>
+<|im_start|>assistant
+","def longest_unique_substring(s: str) -> str:
+    start = 0
+    max_length = 0
+    max_substring = """"
+    char_index_map = {}
+
+    for end in range(len(s)):
+        if s[end] in char_index_map and char_index_map[s[end]] >= start:
+            start = char_index_map[s[end]] + 1
+
+        char_index_map[s[end]] = end
+
+        if end - start + 1 > max_length:
+            max_length = end - start + 1
+            max_substring = s[start:end+1]
+
+    return max_substring","```python
+def longest_unique_substring(s: str) -> str:
+    start = 0
+    max_length = 0
+    max_substring = """"
+    char_index_map = {}
+
+    for end in range(len(s)):
+        if s[end] in char_index_map and char_index_map[s[end]] >= start:
+            start = char_index_map[s[end]] + 1
+
+        char_index_map[s[end]] = end
+
+        if end - start + 1 > max_length:
+            max_length = end - start + 1
+            max_substring = s[start:end+1]
+
+    return max_substring
+```",False,1,0.03668972556338166,0.6866010427474976,-0.0,0.13959997523315582,0.9819831071477948,0.5571479797363281,0.07385698765990815,0.9969251129687625,0.9424574425248496,93181818.44428176,0.9639662129409385,0.0,0.0,132,0.005454854626195826,0.019488153085097715,0.6866010427474976,1.037371101165039,-0.9999931486267032,1.0,1.0,1.0,1.0,1.0,0.3879310344827587,0.0,0.0
+18779514445,"Write a function that takes a list of strings and returns a list of all the anagrams found in the list. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.","Here is the code to solve this problem: 
+```python
+def anagrams(strs):
+    anag = {}
+    result = []
+    for str in strs:
+        s = ''.join(sorted(str))
+        if (s in anag):
+            anag[s].append(str)
+        else:
+            anag[s] = [str]
+    for str in anag:
+        if(len(anag[str])>1):
+            result.extend(anag[str])
+    return result
+```","def anagrams(strs):
+    anag = {}
+    result = []
+    for str in strs:
+        s = ''.join(sorted(str))
+        if (s in anag):
+            anag[s].append(str)
+        else:
+            anag[s] = [str]
+    for str in anag:
+        if(len(anag[str])>1):
+            result.extend(anag[str])
+    return result",anagrams,"[assert anagrams([""a""]) == [], assert anagrams([""""]) == [], assert anagrams([""eat"", ""tea"", ""tan"", ""ate"", ""nat"", ""bat""]) == [""eat"", ""tea"", ""ate"", ""tan"", ""nat""]]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a function that takes a list of strings and returns a list of all the anagrams found in the list. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.<|im_end|>
+<|im_start|>assistant
+","def find_anagrams(word_list):
+    from collections import defaultdict
+    
+    anagrams = defaultdict(list)
+    
+    for word in word_list:
+        sorted_word = ''.join(sorted(word))
+        anagrams[sorted_word].append(word)
+    
+    return [group for group in anagrams.values() if len(group) > 1]","```python
+def find_anagrams(word_list):
+    from collections import defaultdict
+    
+    anagrams = defaultdict(list)
+    
+    for word in word_list:
+        sorted_word = ''.join(sorted(word))
+        anagrams[sorted_word].append(word)
+    
+    return [group for group in anagrams.values() if len(group) > 1]
+```",False,1,0.023436489204565685,0.6296607851982117,-0.0,0.11355791249885348,0.9890850832064947,0.6762542128562927,0.05416370956700245,0.9980358382188397,0.9472294831112846,95833333.46479967,0.9781701659990681,8.27842288547092e-10,8.27842288547092e-10,72,0.0029337074340585927,0.012895399491097264,0.6296607851982117,1.0237132818371235,-0.999993240667714,1.0,1.0,1.0,0.0,1.0,0.2991452991452992,0.0,0.0
+70034082307,Write a python function to find the maximum number of consecutive 1's in the array if you can change at most k 0's to 1's.,"Here is the code to solve this problem: 
+```python
+def max_ones(arr, k):
+    left = 0
+    max_len = 0
+    zero_count = 0
+
+    for right in range(len(arr)):
+        if arr[right] == 0:
+            zero_count += 1
+
+        while zero_count > k:
+            if arr[left] == 0:
+                zero_count -= 1
+            left += 1
+
+        max_len = max(max_len, right - left + 1)
+
+    return max_len
+```","def max_ones(arr, k):
+    left = 0
+    max_len = 0
+    zero_count = 0
+
+    for right in range(len(arr)):
+        if arr[right] == 0:
+            zero_count += 1
+
+        while zero_count > k:
+            if arr[left] == 0:
+                zero_count -= 1
+            left += 1
+
+        max_len = max(max_len, right - left + 1)
+
+    return max_len",max_ones,"[assert max_ones([1,1,0,1], 1) == 4, assert max_ones([0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], 3) == 10, assert max_ones([1,1,1,0,0,0,1,1,1,1,0], 2) == 6]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the maximum number of consecutive 1's in the array if you can change at most k 0's to 1's.<|im_end|>
+<|im_start|>assistant
+","def max_consecutive_ones(nums, k):
+    left = 0
+    max_length = 0
+    zero_count = 0
+    
+    for right in range(len(nums)):
+        if nums[right] == 0:
+            zero_count += 1
+        
+        while zero_count > k:
+            if nums[left] == 0:
+                zero_count -= 1
+            left += 1
+        
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length","```python
+def max_consecutive_ones(nums, k):
+    left = 0
+    max_length = 0
+    zero_count = 0
+    
+    for right in range(len(nums)):
+        if nums[right] == 0:
+            zero_count += 1
+        
+        while zero_count > k:
+            if nums[left] == 0:
+                zero_count -= 1
+            left += 1
+        
+        max_length = max(max_length, right - left + 1)
+    
+    return max_length
+```",False,1,0.010010439048119641,0.40213802456855774,-0.0,0.05968567491173671,0.9967283743237136,0.8615509271621704,0.019590115873440905,0.9991610466218157,0.9662976765967575,97247706.62920983,0.993456749194259,5.468316034439507e-10,5.468316034439507e-10,109,0.00038377263993484134,0.0035623797896695165,0.40213802456855774,1.0100607111015,-0.9999933412315649,1.0,1.0,1.0,0.0,1.0,0.33043478260869563,0.0,0.0
+74061132546,Write a python function to find the most frequent character in a string and return its count.,"Here is the code to solve this problem: 
+```python
+def frequent_char(s):
+    max_count = 0
+    max_char = ''
+    char_count = {}
+    for c in s:
+        if c in char_count:
+            char_count[c] += 1
+        else:
+            char_count[c] = 1
+        if char_count[c] > max_count:
+            max_count = char_count[c]
+            max_char = c
+    return max_count
+```","def frequent_char(s):
+    max_count = 0
+    max_char = ''
+    char_count = {}
+    for c in s:
+        if c in char_count:
+            char_count[c] += 1
+        else:
+            char_count[c] = 1
+        if char_count[c] > max_count:
+            max_count = char_count[c]
+            max_char = c
+    return max_count",frequent_char,"[assert frequent_char(""aabbccddeeffgghh"") == 2, assert frequent_char(""python programming"") == 2, assert frequent_char(""hello world"") == 3]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Write a python function to find the most frequent character in a string and return its count.<|im_end|>
+<|im_start|>assistant
+","def most_frequent_char_count(s):
+    from collections import Counter
+    char_count = Counter(s)
+    max_count = max(char_count.values())
+    return max_count","```python
+def most_frequent_char_count(s):
+    from collections import Counter
+    char_count = Counter(s)
+    max_count = max(char_count.values())
+    return max_count
+```",False,1,0.045693224668502806,1.2020626068115234,-0.0,0.1978358613115224,0.9828517287969589,0.5073568820953369,0.07925786128261021,0.996170549062683,0.8992577168767586,92500000.56996219,0.9719472892582417,0.0,0.0,40,0.006281808575093484,0.03913902802087192,1.2020626068115234,1.04675324362304,-0.9999930456280708,1.0,1.0,0.0,0.0,1.0,0.2567567567567568,0.0,0.0
+6536870388,Create a function in Python that takes a list of positive integers as input and returns the maximum product that can be achieved by multiplying any three numbers from the list. Note that the list must contain at least three integers.,"Here is the code to solve this problem: 
+```python
+from typing import List
+
+def max_product(nums: List[int]) -> int:
+    # Sort the list in ascending order
+    nums.sort()
+    # The maximum product can be either:
+    # (1) The product of the three largest numbers
+    # or (2) The product of the two smallest numbers (which could be negative) and the largest number
+    return max(nums[-1] * nums[-2] * nums[-3], nums[0] * nums[1] * nums[-1])
+```","from typing import List
+
+def max_product(nums: List[int]) -> int:
+    # Sort the list in ascending order
+    nums.sort()
+    # The maximum product can be either:
+    # (1) The product of the three largest numbers
+    # or (2) The product of the two smallest numbers (which could be negative) and the largest number
+    return max(nums[-1] * nums[-2] * nums[-3], nums[0] * nums[1] * nums[-1])",max_product,"[assert max_product([5, 5, 5, 5]) == 125, assert max_product([7, 6, 5, 4, 3, 2, 1]) == 210, assert max_product([1, 2, 3, 4]) == 24]","<|im_start|>system
+You are a skilled Python programmer. Write clean, working code without comments or explanations. Focus only on solving the problem correctly.<|im_end|>
+<|im_start|>user
+Write a Python function to solve this problem. Provide only the function code without comments or explanations:
+
+Create a function in Python that takes a list of positive integers as input and returns the maximum product that can be achieved by multiplying any three numbers from the list. Note that the list must contain at least three integers.<|im_end|>
+<|im_start|>assistant
+","def max_product_of_three(nums):
+    nums.sort()
+    return max(nums[-1] * nums[-2] * nums[-3], nums[0] * nums[1] * nums[-1])","```python
+def max_product_of_three(nums):
+    nums.sort()
+    return max(nums[-1] * nums[-2] * nums[-3], nums[0] * nums[1] * nums[-1])
+```",False,1,0.03065149961633885,0.5493876934051514,-0.0,0.11820195529061461,0.9879290994177473,0.7614629864692688,0.04722148798697749,0.9974311637056145,0.9539569983794327,93617021.56419615,0.9758581988354946,0.0,0.0,47,0.0022298689277042596,0.013971702234524454,0.5493876934051514,1.031126093423657,-0.9999932266296224,1.0,1.0,1.0,0.0,1.0,0.24489795918367352,0.0,0.0
